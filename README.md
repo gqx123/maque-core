@@ -1,8 +1,50 @@
-# maque_core — 轻量级可扩展 Agent 框架
+<div align="center">
 
-> v1.3.0 起项目由 myagent 改名为 maque_core。
+# maque_core
 
-一个基于 Python 的轻量级 Agent 框架，采用分层架构设计，支持 ReAct（推理 + 行动）循环、工具自动发现、预算保护等核心能力。
+**轻量级可扩展 Python Agent 框架**
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/gqx123/maque-core?color=success)](https://github.com/gqx123/maque-core/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/gqx123/maque-core?style=social)](https://github.com/gqx123/maque-core/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/gqx123/maque-core?style=social)](https://github.com/gqx123/maque-core/network/members)
+[![Issues](https://img.shields.io/github/issues/gqx123/maque-core)](https://github.com/gqx123/maque-core/issues)
+[![Discussions](https://img.shields.io/badge/Discussions-Join%20the%20chat-blueviolet?logo=github)](https://github.com/gqx123/maque-core/discussions)
+
+> ReAct 循环 · 工具自动发现 · 预算保护 · 面向协议设计
+
+[快速开始](#快速开始) · [文档](#架构概览) · [示例](#快速开始) · [讨论](https://github.com/gqx123/maque-core/discussions)
+
+</div>
+
+---
+
+## ✨ 为什么选择 maque_core？
+
+| 特性 | 说明 |
+|------|------|
+| 🪶 **超轻量** | 核心代码 < 2000 行，零冗余依赖，读得懂、改得动 |
+| 🔌 **即插即用** | `@tool` 装饰器一键注册工具，自动发现、自动生成 Schema |
+| 🛡️ **安全可靠** | 双重预算保护 + 错误分类 + 超时控制，防止 Agent 失控 |
+| 🔄 **ReAct 循环** | 原生支持推理-行动循环，思考过程独立追踪 |
+| 🧩 **面向协议** | 各层基于 Protocol 抽象，LLM / 工具 / 执行后端均可替换 |
+| 🌐 **OpenAI 兼容** | 无缝对接 DashScope、OpenAI、Ollama 等所有兼容 API |
+| 🧪 **测试完备** | 300+ 测试用例，覆盖契约、LLM、工具、内核、集成全链路 |
+| 🖥️ **内置 WebUI** | 自带 Web 界面 + JSON API，开箱即用 |
+
+## 🚀 一分钟上手
+
+```python
+from maque_core import create_agent
+
+agent = create_agent(model="qwen-turbo", api_key="your-key")
+answer = agent.ask("What is 2 + 2?")
+print(answer)
+```
+
+就这么简单。不需要配置注册表、不需要手动注册工具、不需要写复杂的初始化代码。
+
+---
 
 ## 架构概览
 
@@ -487,3 +529,48 @@ class Message:
 ## License
 
 MIT
+
+
+---
+
+## 🗺️ 路线图 (Roadmap)
+
+我们正在持续迭代，以下是规划中的功能：
+
+- [ ] **多模态支持** — 支持图片输入的视觉 Agent
+- [ ] **记忆系统** — 长期记忆 + 向量检索，让 Agent 记住上下文
+- [ ] **流式输出** — SSE 流式响应，提升交互体验
+- [ ] **更多内置工具** — 搜索、爬虫、代码执行等常用工具
+- [ ] **工具沙箱** — 安全执行不受信任的工具代码
+- [ ] **多 Agent 协作** — 支持多个 Agent 分工协作
+- [ ] **LangChain 兼容层** — 无缝接入 LangChain 生态
+
+有想法？欢迎在 [Discussions](https://github.com/gqx123/maque-core/discussions) 里提出来！
+
+## 🤝 贡献指南
+
+欢迎贡献代码、文档或想法！请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详细流程。
+
+**快速参与：**
+- ⭐ **点个 Star** — 这是对我们最大的支持
+- 🐛 **提交 Issue** — 发现 Bug 或有功能建议？[开一个 Issue](https://github.com/gqx123/maque-core/issues/new)
+- 💬 **参与讨论** — 在 [Discussions](https://github.com/gqx123/maque-core/discussions) 分享你的使用经验
+- 🔧 **提交 PR** — 修复 Bug、添加功能、改进文档都欢迎
+
+## 📄 许可证
+
+本项目基于 [MIT License](LICENSE) 开源，可自由使用、修改和分发。
+
+## 🙏 致谢
+
+感谢所有为这个项目做出贡献的人！
+
+---
+
+<div align="center">
+
+**如果这个项目对你有帮助，别忘了点个 ⭐ Star 支持一下！**
+
+Made with ❤️ by [gqx123](https://github.com/gqx123)
+
+</div>
