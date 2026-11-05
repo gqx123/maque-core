@@ -8,7 +8,7 @@ from .kernel import Agent, AgentRunError
 from .llm import MockLLM, OpenAICompatibleProvider
 from .tools import ToolRegistry, tool
 
-__version__ = "1.3.4"
+__version__ = "1.3.6"
 
 __all__ = [
     "create_agent",
