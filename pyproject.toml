@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maque-core"
+version = "1.3.4"
+description = "Lightweight, extensible Python Agent framework with ReAct loop, auto tool discovery, and budget protection."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "gqx123", email = "1195544755@qq.com" }
+]
+maintainers = [
+    { name = "gqx123", email = "1195544755@qq.com" }
+]
+keywords = [
+    "agent", "llm", "ai-agent", "llm-agent", "react",
+    "tool-use", "agent-framework", "openai-compatible",
+    "lightweight", "python-agent"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "build>=1.0",
+    "twine>=4.0",
+]
+webui = [
+    # webui.py uses stdlib only
+]
+
+[project.urls]
+Homepage = "https://github.com/gqx123/maque-core"
+Repository = "https://github.com/gqx123/maque-core"
+Documentation = "https://github.com/gqx123/maque-core#readme"
+Issues = "https://github.com/gqx123/maque-core/issues"
+Discussions = "https://github.com/gqx123/maque-core/discussions"
+
+[project.scripts]
+maque-core = "app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["maque_core*"]
+exclude = ["tests*", "examples*", "*.tests", "*.tests.*"]
+
+[tool.setuptools.package-data]
+maque_core = ["*.pyi", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
