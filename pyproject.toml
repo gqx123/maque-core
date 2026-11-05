@@ -9,10 +9,10 @@ description = "Lightweight, extensible Python Agent framework with ReAct loop, a
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-    { name = "gqx123", email = "1195544755@qq.com" }
+    { name = "gqx123" }
 ]
 maintainers = [
-    { name = "gqx123", email = "1195544755@qq.com" }
+    { name = "gqx123" }
 ]
 keywords = [
     "agent", "llm", "ai-agent", "llm-agent", "react",
